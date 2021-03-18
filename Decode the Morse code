@@ -1,0 +1,18 @@
+decodeMorse = function(morseCode){
+  //your code here
+  trimmedMorseCode=morseCode.trim();
+  myWords=trimmedMorseCode.split(" ")
+let completeWord="";
+let lastOne=true;
+for (a=0; a<myWords.length; a++) {
+    firstLetter=myWords[a];
+    b=MORSE_CODE[firstLetter]
+    if (firstLetter!=''){completeWord=completeWord+b}
+    else if (firstLetter==lastOne) {completeWord=completeWord+" "}
+    lastOne=firstLetter;
+}
+  return completeWord;
+}
+
+
+//console.log(MORSE_CODE['.--'])
